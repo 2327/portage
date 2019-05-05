@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<layman>
+	<overlay 
+	      type="git"
+	      src="https://github.com/2327/portage.git"
+	      contact="max@2327.ru"
+	      name="2327">
+	<link>http://github.com/2327/portage</link>
+	<description>
+		Various unstable ebuilds.
+	</description>
+	</overlay>
+</layman>
+
