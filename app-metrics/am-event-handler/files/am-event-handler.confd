@@ -1,0 +1,5 @@
+# config file for /etc/init.d/am-event-handler
+# run /usr/bin/am-event-handler -h to see available options
+
+AM_EVENT_HANDLER_LOGDIR="/var/log/${RC_SVCNAME}"
+AM_EVENT_HANDLER_OPTS=""
