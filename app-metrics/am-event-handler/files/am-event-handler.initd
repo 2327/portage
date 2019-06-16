@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+# Copyright 2016-2018 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+description="Prometheus event-handler"
+pidfile=${pidfile:-"/run/${RC_SVCNAME}.pid"}
+user=${user:-${RC_SVCNAME}}
+group=${group:-${RC_SVCNAME}}
+
+command="/usr/bin/am-event-handler"
+command_args="${command_args:--c /etc/am-event-handler/am-event-handler.yml}"
+command_background="true"
+start_stop_daemon_args="--user ${user} --group ${group} \
+        --stdout ${AM_EVENT_HANDLER_LOGDIR}/${RC_SVCNAME}.log \
+        --stderr ${AM_EVENT_HANDLER_LOGDIR}/${RC_SVCNAME}.log"
+
+extra_started_commands="reload"
+
+depend() {
+        after net
+}
+
+reload() {
+        ebegin "Reloading ${SVCNAME}"
+        start-stop-daemon --signal HUP --pidfile "${pidfile}"
+        eend $? "Failed to stop ${SVCNAME}"
+}
