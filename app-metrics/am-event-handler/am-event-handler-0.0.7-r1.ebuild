@@ -65,7 +65,6 @@ src_install() {
 
 	insinto /etc/am-event-handler
 	newins ${WORKDIR}/${P}/src/${EGO_PN}/testdata/config.yaml am-event-handler.yml.example
-    newins ${WORKDIR}/${P}/src/${EGO_PN}/testdata/config.yaml am-event-handler.yml.example
 
     if use examples; then
         insinto /usr/share/doc/${P}/examples
