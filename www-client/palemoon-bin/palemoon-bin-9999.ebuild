@@ -7,9 +7,7 @@ PM_HTTP_URI="http://linux.palemoon.org/datastore/release"
 DESCRIPTION="Pale Moon is an Open Source, Goanna-based web browser available for Microsoft Windows and Linux (with other operating systems in development), focusing on efficiency and customization. Make sure to get the most out of your browser!"
 HOMEPAGE="https://www.palemoon.org/"
 
-SRC_URI="${SRC_URI}
-    amd64? ( ${PM_HTTP_URI}/palemoon-unstable-latest.linux-x86_64.tar.bz2 -> ${P}.tar.bz2 )
-    x86?   ( ${PM_HTTP_URI}/palemoon-unstable-latest.linux-i686.tar.bz2 -> ${P}.tar.bz2 )"
+SRC_URI="${SRC_URI} ${PM_HTTP_URI}/palemoon-unstable-latest.linux-x86_64-gtk2.tar.xz -> ${P}.tar.xz" 
 
 BIN_PN="${PN/-bin/}"
 
