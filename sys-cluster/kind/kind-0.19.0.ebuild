@@ -15,7 +15,7 @@ IUSE=""
 
 DOCS=( README.md )
 
-BDEPEND="app-emulation/docker"
+BDEPEND="app-containers/docker app-containers/docker-cli"
 
 src_unpack() { 
   true
