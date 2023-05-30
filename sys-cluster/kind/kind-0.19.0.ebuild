@@ -26,4 +26,3 @@ src_install() {
   dosym ${PN}-${PV} /usr/bin/${PN}
 
 }
-
