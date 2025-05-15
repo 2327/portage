@@ -16,42 +16,4 @@ make_pidfile=yes
 
 depend() {
     need net
-    # use logger dns
-    # after firewall
 }
-
-#start_pre() {
-#    checkpath --directory --owner root:root --mode 0755 /var/run/mybinary
-#}
-
-#start_stop_daemon_args="--user ${user} --group ${group} \
-#        --stdout ${AM_EVENT_HANDLER_LOGDIR}/${RC_SVCNAME}.log \
-#        --stderr ${AM_EVENT_HANDLER_LOGDIR}/${RC_SVCNAME}.log"
-#
-#
-#start() {
-#    ebegin "Starting ${name}"
-#    start-stop-daemon --start --exec ${command} --pidfile ${pidfile} --background
-#    eend $?
-#}
-#
-#stop() {
-#    ebegin "Stopping ${name}"
-#    start-stop-daemon --stop --pidfile ${pidfile}
-#    eend $?
-#}
-
-
-
-#start_stop_daemon_args="--user ${user} --group ${group} \
-#        --stdout ${AM_EVENT_HANDLER_LOGDIR}/${RC_SVCNAME}.log \
-#        --stderr ${AM_EVENT_HANDLER_LOGDIR}/${RC_SVCNAME}.log"
-
-#extra_started_commands="reload"
-
-#reload() {
-#        ebegin "Reloading ${SVCNAME}"
-#        start-stop-daemon --signal HUP --pidfile "${pidfile}"
-#        eend $? "Failed to stop ${SVCNAME}"
-#}
-
