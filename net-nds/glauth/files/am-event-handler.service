@@ -1,0 +1,11 @@
+[Unit]
+Description=am-event-handler
+After=network.target
+
+[Service]
+User=am-event-handler
+ExecStart=/usr/bin/am-event-handler
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

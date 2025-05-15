@@ -1,0 +1,6 @@
+# config file for /etc/init.d/glauth
+# run /usr/bin/glauth -h to see available options
+GLAUTH_CONFIG="/etc/glauth/glauth.conf"
+GLAUTH_LOGDIR="/var/log/${RC_SVCNAME}"
+GLAUTH_OPTS=""
+

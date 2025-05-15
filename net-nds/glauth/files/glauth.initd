@@ -1,0 +1,57 @@
+#!/sbin/openrc-run
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+name="glauth daemon"
+description="GLAuth: LDAP authentication server for developers"
+command=/usr/bin/glauth
+command_args="-c /etc/glauth/glauth.conf $GLAUTH_OPTS"
+command_user=glauth:glauth
+command_background="true"
+output_log="/var/log/${RC_SVCNAME}/${RC_SVCNAME}.log"
+error_log="/var/log/${RC_SVCNAME}/${RC_SVCNAME}.log"
+pidfile=${pidfile:-"/run/${RC_SVCNAME}.pid"}
+make_pidfile=yes
+
+
+depend() {
+    need net
+    # use logger dns
+    # after firewall
+}
+
+#start_pre() {
+#    checkpath --directory --owner root:root --mode 0755 /var/run/mybinary
+#}
+
+#start_stop_daemon_args="--user ${user} --group ${group} \
+#        --stdout ${AM_EVENT_HANDLER_LOGDIR}/${RC_SVCNAME}.log \
+#        --stderr ${AM_EVENT_HANDLER_LOGDIR}/${RC_SVCNAME}.log"
+#
+#
+#start() {
+#    ebegin "Starting ${name}"
+#    start-stop-daemon --start --exec ${command} --pidfile ${pidfile} --background
+#    eend $?
+#}
+#
+#stop() {
+#    ebegin "Stopping ${name}"
+#    start-stop-daemon --stop --pidfile ${pidfile}
+#    eend $?
+#}
+
+
+
+#start_stop_daemon_args="--user ${user} --group ${group} \
+#        --stdout ${AM_EVENT_HANDLER_LOGDIR}/${RC_SVCNAME}.log \
+#        --stderr ${AM_EVENT_HANDLER_LOGDIR}/${RC_SVCNAME}.log"
+
+#extra_started_commands="reload"
+
+#reload() {
+#        ebegin "Reloading ${SVCNAME}"
+#        start-stop-daemon --signal HUP --pidfile "${pidfile}"
+#        eend $? "Failed to stop ${SVCNAME}"
+#}
+
